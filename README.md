@@ -26,5 +26,3 @@ Ce projet transforme votre Google Sheet en un outil d'audit de fichiers. Il comb
     * Étape 1 : Cliquez sur **Lister les Fichiers (Scan)**.
     * Étape 2 : Une fois le scan fini, cliquez sur **Générer le Dashboard**.
 
-## Auteur
-Conçu et documenté par **Fabrice Faucheux**.
