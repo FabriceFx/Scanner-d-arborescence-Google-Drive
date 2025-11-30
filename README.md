@@ -6,20 +6,25 @@
 ![Author](https://img.shields.io/badge/Auteur-Fabrice%20Faucheux-orange)
 
 ## Description
-Ce script génère une arborescence structurée du contenu de votre Google Drive directement dans un Google Sheet. Cette version "Avancée" intègre un moteur de filtrage natif permettant de ne sélectionner que certains types de fichiers (PDF, Sheets, Docs, Images, etc.) tout en conservant la hiérarchie des dossiers.
+Ce projet transforme votre Google Sheet en un outil d'audit de fichiers. Il combine un scanneur récursif de Google Drive avec un module de visualisation de données (Dashboard). Le script génère automatiquement des statistiques sur la répartition des types de fichiers (PDF, Google Docs, Images, etc.) sous forme de tableau et de graphique.
 
-## Fonctionnalités clés
-* **Filtrage par Type MIME** : Configuration simple via la constante `TYPES_CIBLES` pour inclure uniquement les fichiers pertinents.
-* **Scan Récursif Intelligent** : Traverse tous les sous-dossiers même si le dossier parent ne contient pas de fichiers cibles immédiats.
-* **Batch Processing** : Optimisé pour traiter des milliers de fichiers sans timeout immédiat.
-* **Données Enrichies** : Ajout de la colonne "Type MIME" technique pour faciliter les tris ultérieurs dans le tableur.
+## Fonctionnalités
+### 1. Scan & Data (`Données_Drive`)
+* Exploration récursive complète.
+* Renommage automatique de la feuille de destination.
+* Capture des métadonnées (ID, URL, Date).
 
-## Configuration du filtre
-Dans le fichier `Code.gs`, modifiez la constante au début du script :
+### 2. Dashboard (`Tableau_de_Bord`)
+* **Agrégation automatique** : Calcul des occurrences par type MIME.
+* **Nettoyage des étiquettes** : Transformation des types techniques (`application/vnd.google-apps.spreadsheet`) en noms lisibles (`G-SUITE (SPREADSHEET)`).
+* **Visualisation** : Génération d'un **Pie Chart 3D** dynamique intégré à la feuille.
 
-```javascript
-// Pour ne lister que les Google Sheets et les PDF :
-const TYPES_CIBLES = [MimeType.GOOGLE_SHEETS, MimeType.PDF];
+## Installation
+1.  Copiez le code `Code.js` dans l'éditeur de script.
+2.  Sauvegardez et rafraîchissez le fichier Sheet.
+3.  Utilisez le menu **Gestion Drive & Analytics** :
+    * Étape 1 : Cliquez sur **Lister les Fichiers (Scan)**.
+    * Étape 2 : Une fois le scan fini, cliquez sur **Générer le Dashboard**.
 
-// Pour tout lister (comportement par défaut) :
-const TYPES_CIBLES = [];
+## Auteur
+Conçu et documenté par **Fabrice Faucheux**.
