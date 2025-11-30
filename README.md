@@ -1,4 +1,4 @@
-# Scanner d'arborescence Google-Drive
+# Scanner d'arborescence Google Drive
 
 ![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-Google%20Apps%20Script-green)
